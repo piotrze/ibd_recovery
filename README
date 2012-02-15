@@ -1,0 +1,15 @@
+This is a tricky script to automate recovering whole database from *.ibd files. 
+
+Requirements:
+It uses percona tool, you can download it from here:
+https://launchpad.net/percona-data-recovery-tool-for-innodb
+
+How:
+The main idea of recovering table from ibd file is inspired by:
+http://www.mysqlperformanceblog.com/2011/05/13/connecting-orphaned-ibd-files/
+I was able to recovery only one file, and it tooks me a lot time, so here is script - recovery.rb
+This will produce you a many sql files for each table, you need to create new datbase and load those sqls. You can use my dummy script load.rb
+
+
+Note:
+Tool was writen to recover database with about 250 tables, it has problems with MyISAM tables.
